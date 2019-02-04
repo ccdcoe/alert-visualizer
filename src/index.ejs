@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    <%= htmlWebpackPlugin.options.title %> Visualizer
+  </title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<script id="template" type="x-tmpl-mustache">
+  <table>
+    <thead>
+      <th>From</th>
+      <th>To</th>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>{{ from }}</td>
+        <td>{{ to }}</td>
+      </tr>
+      {{#alerts}}
+      <tr><td colspan="2">{{ key }} <span>{{ doc_count }}</span></td></tr>
+      {{/alerts}}
+    </tbody>
+  </table>
+</script>
+
+<body>
+  <section class="container">
+    <h1>Attack visualizer - IP addresses linked by alerts</h1>
+    <svg id="alerts"></svg>
+    <article id="highlight"></article>
+  </section>
+</body>
+</html>

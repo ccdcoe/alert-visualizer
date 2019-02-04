@@ -1,0 +1,51 @@
+#alerts {
+  width: 100%;
+  height: 60vh;
+}
+
+#highlight {
+  height: 35vh;
+
+  span {
+    float: right;
+    min-width: 3em;
+    background: #999;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    padding: 0 6px;
+    border-radius: 26px;
+  }
+}
+
+.error {
+  background: #F8D7DA;
+  color: color(#F8D7DA shade(75%));
+  padding: 0.5em 1em;
+  font-size: 1.66rem;
+  border: 1px solid color(#F8D7DA shade(25%));
+  border-radius: 5px;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+
+  &.highlighted {
+    stroke: red;
+    stroke-opacity: 0.9;
+    stroke-width: 3px;
+  }
+}
+
+.nodes circle {
+  stroke: #FFF;
+  stroke-width: 1.5px;
+}
+
+path {
+  fill-opacity: 0.1;
+  stroke-opacity: 1;
+}

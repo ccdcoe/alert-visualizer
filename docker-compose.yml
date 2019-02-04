@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  static: &static
+    image: visualizer_static
+    restart: always
+    build:
+      context: .
+    ports:
+      - "80:80"
+
+  app: &app_base
+    image: rails_proxy
+    build:
+      context: ./proxy
+    ports:
+      - "4567:4567"
+    restart: always
+    environment:
+      - ES_ENDPOINT=http://100.64.9.10:9200/peek-suricata-alert-*/_search
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 4567 || exit 1"]
+      interval: 5m
+      start_period: 1m
